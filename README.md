@@ -20,8 +20,8 @@ VERSION:
    0.1.0
 
 COMMANDS:
-   list, l      List available libraries
-   info, i      Show library information
+   list, l      List available packages
+   info, i      Show the package information
    tag, t       Generate HTML tag
    update, u    Update the package cache
    download, d  Download assets
