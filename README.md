@@ -1,4 +1,4 @@
-gocdnjs [![Build Status](https://travis-ci.org/yasuyk/gocdnjs.png)](https://travis-ci.org/yasuyk/gocdnjs)
+gocdnjs [![Build Status](https://travis-ci.org/yasuyk/gocdnjs.png?branch=master)](https://travis-ci.org/yasuyk/gocdnjs)
 ============
 
 Command line interface for [cdnjs.com][cdnjs].
