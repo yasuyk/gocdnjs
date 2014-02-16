@@ -9,8 +9,6 @@ import (
 const (
 	// AppName is application name
 	AppName = "gocdnjs"
-	// AppVersion is application version
-	AppVersion = "0.1.0"
 	// Latest indicates latest version
 	Latest                       = "latest"
 	packageArg                   = "[package]"

@@ -1,3 +1,4 @@
 gocdnjs
 *.test
 vendor
+release
