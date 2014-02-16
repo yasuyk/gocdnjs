@@ -75,6 +75,11 @@ func TrimNewLine(str string) string {
 }
 
 func homedir() string {
+	if runtime.GOOS == "linux" && runtime.GOARCH == "386" {
+		//user.Current() is not implemented on linux/386
+		return os.Getenv("HOME")
+	}
+
 	usr, err := user.Current()
 	if err != nil {
 		log.Fatal(err)
