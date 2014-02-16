@@ -42,7 +42,7 @@ task :release do
       sh "GOOS=#{os} GOARCH=#{arch} go build -o #{exe}"  do |ok, res|
         if ok
           zip = File.join dir, "#{APPNAME}_#{version}_#{os}_#{arch}.zip"
-          sh "zip #{zip} #{exe}" do |ok, res|
+          sh "zip -j #{zip} #{exe}" do |ok, res|
             FileUtils.rm exe
           end
         end
