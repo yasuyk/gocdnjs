@@ -79,10 +79,9 @@ func commands(cmd lazyLoadCmd) *[]cli.Command {
 			Action:      func(c *cli.Context) { cmd().Url(c) },
 		},
 		{
-			Name:      "update",
-			ShortName: "u",
-			Usage:     "Update the package cache",
-			Action:    func(c *cli.Context) { cmd().Update() },
+			Name:   "update",
+			Usage:  "Update the package cache",
+			Action: func(c *cli.Context) { cmd().Update() },
 		},
 		{
 			Name:        "download",
