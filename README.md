@@ -21,10 +21,10 @@ VERSION:
 
 COMMANDS:
    list, l      List available packages
-   info, i      Show the package information
-   tag, t       Generate HTML tag
-   update, u    Update the package cache
-   download, d  Download assets
+   info, i      Show package information
+   url, u       Show CDN URL of the package
+   update       Update the package cache
+   download, d  Download assets of the package
    cachefile, c Show cache file path
    help, h      Shows a list of commands or help for one command
 
