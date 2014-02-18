@@ -30,7 +30,7 @@ func CachePath(elem ...string) string {
 
 func Exists(name string) bool {
 	_, err := os.Stat(name)
-	return !os.IsNotExist(err)
+	return err == nil
 }
 
 func Exit(msg string) {
