@@ -5,4 +5,7 @@ before_install:
   - go get github.com/mattn/gom
 script:
   - $HOME/gopath/bin/gom install
-  - $HOME/gopath/bin/gom test
+  - $HOME/gopath/bin/gom test -race -coverprofile=coverage.txt -covermode=atomic
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
