@@ -1,7 +1,7 @@
 gocdnjs
 ============
 
-[![Build Status](https://travis-ci.org/yasuyk/gocdnjs.png?branch=master)](https://travis-ci.org/yasuyk/gocdnjs)
+[![travis build status](https://travis-ci.org/yasuyk/gocdnjs.svg?branch=master)](https://travis-ci.org/yasuyk/gocdnjs)
 [![codecov](https://codecov.io/gh/yasuyk/gocdnjs/branch/master/graph/badge.svg)](https://codecov.io/gh/yasuyk/gocdnjs)
 
 Command line interface for [cdnjs.com][cdnjs].
