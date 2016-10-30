@@ -36,7 +36,9 @@ func (c *Commands) List(cli *cli.Context) {
 		for _, p := range *ps.Packages {
 			fmt.Printf("(name \"%s\" version \"%s\" ", p.Name, p.Version)
 			if showDesc {
-				fmt.Printf("description \"%s\"", TrimNewLine(p.Description))
+				str := strings.Replace(p.Description, "'", "\\'", -1)
+				str = strings.Replace(str, "\"", "\\\"", -1)
+				fmt.Printf("description \"%s\"", TrimNewLine(str))
 			}
 			fmt.Print(")")
 		}
