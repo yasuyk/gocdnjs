@@ -17,15 +17,15 @@ clean-release:
 
 .PHONY : check-release-tag-variable
 check-release-tag-variable:
-	@git tag -l | grep -P "^$$RELEASE_TAG$$" > /dev/null || (echo $(RELEASE_TAG) is not found in git tags && exit 1)
+	@git tag -l | grep -P "^v$$RELEASE_TAG$$" > /dev/null || (echo v$(RELEASE_TAG) is not found in git tags. RELEAT_TAG must not be includeed 'v' prefix && exit 1)
 	@echo RELEASE_TAG=$(RELEASE_TAG)
 
 .PHONY : release
 release: check-release-dependencies clean-release check-release-tag-variable
 	@mkdir -p $(RELEASE_WORKING_DIR)
-	git clone -b $(RELEASE_TAG) . $(RELEASE_WORKING_DIR)
+	git clone -b v$(RELEASE_TAG) . $(RELEASE_WORKING_DIR)
 	cd $(RELEASE_WORKING_DIR)
 	cd $(RELEASE_WORKING_DIR) && gox --osarch $(OSARCH) -output "dist/{{.Dir}}_$(RELEASE_TAG)_{{.OS}}_{{.Arch}}/{{.Dir}}"
 	cd $(RELEASE_WORKING_DIR) && bash $(PROJECT_ROOT)/script/zip-releases.sh
-	ghr -t $(GITHUB_TOKEN) $(RELEASE_TAG) $(RELEASE_WORKING_DIR)/pkg/
+	ghr -t $(GITHUB_TOKEN) v$(RELEASE_TAG) $(RELEASE_WORKING_DIR)/pkg/
 
